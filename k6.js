@@ -7,7 +7,7 @@ export let options = {
 };
 
 export default function () {
-  let url = 'http://my-service.default.svc.cluster.local'; // Replace with your service URL
+  let url = 'http://dev-createfile .svc.cluster.local'; // Replace with your service URL
   let response = http.get(url);
   console.log(`Response status code: ${response.status}`);
   sleep(1);
