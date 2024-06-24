@@ -10,7 +10,7 @@ export let options = {
 };
 
 export default function () {
-  let url = 'http://dev-flowcessapi.default.svc.cluster.local:9000'; // Replace with your service URL
+  let url = 'http://dev-flowcessapi.default.svc.cluster.local:9000/hc'; // Replace with your service URL
   
   // Generate random number of keys and values
   let payload = {};
