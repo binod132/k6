@@ -7,7 +7,7 @@ export let options = {
 };
 
 export default function () {
-  let url = 'http://dev-objectdetectionservice.default.svc.cluster.local';
+  let url = 'http://dev-objectdetectionservice.default.svc.cluster.local:9080';
   let response = http.get(url);
   console.log(`Response status code: ${response.status}`);
   sleep(1);
