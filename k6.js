@@ -1,15 +1,9 @@
 import grpc from 'k6/net/grpc';
 import { check, sleep } from 'k6';
-import { readFileSync } from 'fs';
-import path from 'path';
-
-const protoPath = path.resolve(__dirname, 'hello.proto');
-
-console.log('Current working directory:', __dirname);
-console.log('Proto file path:', protoPath);
 
 const client = new grpc.Client();
-client.load([protoPath]);
+client.load(['.'], 'hello.proto');  // Ensure this path is correct
+console.log(`Current working directory: ${__ENV.PWD}`);
 
 export default () => {
   client.connect('dev-objectdetectionservice.default.svc.cluster.local:9080', {
