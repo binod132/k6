@@ -2,8 +2,9 @@ import grpc from 'k6/net/grpc';
 import { check, sleep } from 'k6';
 
 const client = new grpc.Client();
-client.load(['.'], 'hello.proto');  // Ensure this path is correct
 console.log(`Current working directory: ${__ENV.PWD}`);
+client.load(['.'], 'hello.proto');  // Ensure this path is correct
+
 
 export default () => {
   client.connect('dev-objectdetectionservice.default.svc.cluster.local:9080', {
