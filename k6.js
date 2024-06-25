@@ -3,7 +3,7 @@ import { check, sleep } from 'k6';
 
 const client = new grpc.Client();
 console.log(`Current working directory: ${__ENV.PWD}`);
-client.load(['definitions'], 'hello.proto');  // Ensure this path is correct
+client.load(['https://github.com/moul/pb/blob/master/hello/hello.proto']);  // Ensure this path is correct
 
 
 export default () => {
