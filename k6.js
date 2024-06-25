@@ -7,9 +7,7 @@ client.load(['https://github.com/moul/pb/blob/master/hello/hello.proto']);  // E
 
 
 export default () => {
-  client.connect('dev-objectdetectionservice.default.svc.cluster.local:9080', {
-    // plaintext: false
-  });
+  client.connect('dev-objectdetectionservice.default.svc.cluster.local:9080', {plaintext: true});
 
   const data = { greeting: 'Bert' };
   const response = client.invoke('hello.HelloService/SayHello', data);
