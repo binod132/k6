@@ -2,7 +2,7 @@ import grpc from 'k6/net/grpc';
 import { check, sleep } from 'k6';
 
 const client = new grpc.Client();
-client.load(['definitions'], 'hello.proto');
+client.load(['.'], 'hello.proto');
 
 export default () => {
   client.connect('dev-objectdetectionservice.default.svc.cluster.local:9080', {
